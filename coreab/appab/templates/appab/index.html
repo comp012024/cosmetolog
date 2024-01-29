@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
+    <link rel="stylesheet" media="screen" href="{% static 'https://fontlibrary.org//face/kaushan-script' %}" type="text/css"/>
+    <title>Интернет-магазин косметической продукции</title>
+</head>
+<body>
+    <header>
+    <div class="header-one">
+        <h1>Aesthetic Beauty</h1>
+        <img src="{% static './img/logo.png' %}" alt="Логотип">
+    </div>
+    <div class="header-two">
+        <ul>
+            <li><a href="{% url 'Aesthetic Beauty' %}" id="glavcolor">Главная</a></li>
+            <li><a href="{% url 'about' %}">О салоне</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+        </ul>
+    </div>
+    </header>
+    <content>
+    <div class="cont-content">
+        <div class="modal-windows" id="modalwd">
+            <span class="close">&times;</span>
+            <form id='form' action="{% url 'Aesthetic Beauty' %}" method="post">
+                <p>Форма для обратной связи</p>
+                {% csrf_token %}
+                <div class="feedback-modal">
+                <input type="text" class="input-feedback" name="name" placeholder="Введите ваше имя...">
+                    </div>
+                <div class="feedback-modal">
+                <input type="email" class="input-feedback" name="email" placeholder="Действующая почтовый ящик...">
+                    </div>
+                  <div class="feedback-modal">
+                <input type="text" class="input-feedback" name="number" placeholder="Действующий номер телефона...">
+                    </div>
+                <div class="feedback-modal">
+                <input type="text" class="input-feedback" name="problem" placeholder="Оставьте ваш отзыв...">
+                    </div>
+                <div class="submit">
+                <input type="submit" value="Отправить заявку">
+                    </div>
+            </form>
+        </div>
+        <div class="cont">
+            <img src="{% static './img/lico-photo-transformed.png' %}" alt="Лицо">
+        </div>
+        <div class="text-block-tr">
+            <p>Aesthetic Beauty - это
+                салон аппаратной косметологии экспертного уровня.
+                Здоровое тело и красота кожи - наша задача, которую мы выполняем ежедневно. Находим подход к каждому гостю, окружая комфортом и заботой. Сложно найти своего специалиста, которому можно доверится. Наша команда развивает свои профессиональные навыки, чтобы клиенты смогли чувствовать себя комфортно во время процедур и консультаций.</p>
+        </div>
+        <div class="button" id="modal">
+            <h1>Оставьте отзыв</h1>
+        </div>
+    </div>
+        </div>
+</content>
+<footer>
+    <div class="footer">
+        <img src="{% static './img/logo.png' %}" alt="Логотип">
+        <h1>Поделиться в соц.сети</h1>
+        <div class="soc-siti">
+            <img src="{% static './img/vk.png' %}" alt="Vkontakte" id="vk">
+            <img src="{% static './img/insta.png' %}" alt="Instagram" id="inst">
+            <img src="{% static './img/Telegram.png' %}" alt="Telegram" id="telegram">
+        </div>
+        <div class="footer-nav">
+            <ul>
+               <li><a href="{% url 'Aesthetic Beauty' %}" id="glavcolor">Главная</a></li>
+            <li><a href="{% url 'about' %}">О салоне</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+            </ul>
+        </div>
+       <div class="footer-oplata">
+        <h1>Способ оплаты:</h1>
+        <img src="{% static './img/mir-transformed.png' %}" alt="Карта MIR">
+       </div>
+        <div class="footer-telefon">
+            <img src="{% static './img/telefon-transformed.png' %}" alt="Телефон">
+            <h1>+7(987)-668-18-50</h1>
+        </div>
+        <div class="footer-adres">
+            <img src="{% static './img/adres-gZvruaADJ-transformed.png' %}" alt="Адрес">
+            <h1>г.Москва, ул.Ленина, 24/7</h1>
+        </div>
+    </div>
+    </footer>
+    <script src="{% static 'js/st.js' %}"></script>
+</body>
+</html>
